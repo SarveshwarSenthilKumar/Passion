@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        {% if type == "dj" %}
+        <title>History of Passionate DJs</title>
+        {% else %}
+        <title>History of Passion</title>
+        {% endif %}
+    </head>
+    <body style="background-color: black;">
+        <div style="margin-top: 4%; font-size: 13vw; color: white; text-align: center;">
+          Passion
+        </div>
+        <div style="margin-top: 1%; font-size: 3vw; color: white; margin-left: 3%; margin-right: 15%; float: left;">
+          {% for result in results %}
+          {{result}}<br>
+          {% endfor %}
+          <br>
+        </div>
+        {% if type == "dj" %}
+        <form action="/dj" method="POST">
+        <div class="form-group">
+
+          <br>
+          <br>
+
+          <input placeholder="Name" type="text" name="name" id="name"  style="height: 80px; width: 94%; margin-left: 3%;">
+        </div>
+        <div class="form-group">
+
+          <button type="submit" class="btn btn-primary form-control" style="height: 80px; font-size: 30px; width: 94%; margin-left: 3%;">Be a DJ!</button>
+        </div>
+        </form>
+        {% endif %}
+    </body>
+</html>

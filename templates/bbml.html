@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>Passionate Student</title>
+    </head>
+    <body style="background-color: black;">
+        <div style="margin-top: 4%; font-size: 13vw; color: white; text-align: center;">
+          Passion
+        </div>
+
+        <br>
+        <div style="margin-top: 1%; font-size: 4vw; color: white; margin-left: 15%; margin-right: 15%; float: center;">
+          Question: <div style="font-size: 2vw;">{{question}}</div>
+        </div>
+        <div style="margin-top: 1%; font-size: 4vw; color: white; margin-left: 15%; margin-right: 15%; float: center;">
+          Lowest Possible Guess: {{min}}
+        </div>
+        <div style="margin-top: 1%; font-size: 4vw; color: white; margin-left: 15%; margin-right: 15%; float: center;">
+          Highest Possible Guess: {{max}}
+          <br>
+        </div>
+        <div style="margin-top: 5%; font-size: 5vw; color: white; margin-left: 15%; margin-right: 15%; float: center;">
+         Random Selection Guesses:
+        </div>
+        
+        {% for result in results %}
+        <div style="margin-top: 1%; font-size: 4vw; color: white; margin-left: 15%; margin-right: 15%; float: center;">
+          {{result.name}}: {{result.guess}}
+        </div>
+        
+        {% endfor %}
+        
+        <form action="/bbentry" method="POST">
+        <div class="form-group">
+
+          <br>
+          <br>
+
+          <input placeholder="Name" type="text" name="name" id="name"  style="height: 80px; width: 94%; margin-left: 3%;">
+          <input placeholder="Guess Example:(17)" type="text" name="data" id="data"  style="height: 80px; width: 94%; margin-left: 3%;">
+        
+        </div>
+        <div class="form-group">
+
+          <button type="submit" class="btn btn-primary form-control" style="height: 80px; font-size: 30px; width: 94%; margin-left: 3%;">Enter Number Guess</button>
+        </div>
+        </form>
+        
+    </body>
+</html>

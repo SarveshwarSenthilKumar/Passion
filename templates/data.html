@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>Passionate Data</title>
+    </head>
+    <body style="background-color: black;">
+        <div style="margin-top: 4%; font-size: 13vw; color: white; margin-left: 30%;">
+          Passion
+        </div>
+        <div style="margin-top: 1%; font-size: 6vw; color: white; text-align: center; float: center;">
+          Total Searches: {{total}}<br>
+          Average Query Length: {{averageST}}<br><br>
+          Popular Search Queries:
+          
+          <div style="margin-top: 1%; font-size: 4vw; color: white; margin-left: 15%; margin-right: 15%; float: center;">
+          
+          {% for result in results %}         
+          {{ results.index(result)+1 }}. {{ result }} || Values: {{fvalue[results.index(result)]}} <br>
+          {% endfor %}
+          </div>
+          <br>
+          <div style="font-size: 4vw">{{sentPer}}<br></div><br>
+          <div style="font-size: 4vw">If you would like to make a graph:<br></div>
+          <div style="margin-top: 1%; font-size: 3vw; color: white; margin-left: 15%; margin-right: 15%; float: center;">
+          Keys: {{keys}}<br>
+          Values: {{values}}
+          </div>
+
+        </div>
+        
+    </body>
+</html>
